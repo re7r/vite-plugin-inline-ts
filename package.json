@@ -1,0 +1,99 @@
+{
+  "name": "vite-plugin-inline-ts",
+  "version": "1.0.2",
+  "packageManager": "pnpm@10.11.0",
+  "description": "A Vite plugin to process TypeScript code inside <script lang=\"ts\"> tags.",
+  "type": "module",
+  "keywords": [
+    "vite-plugin",
+    "compile",
+    "transpile",
+    "typescript",
+    "embeded",
+    "inline",
+    "html",
+    "templates"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/re7r/vite-plugin-inline-ts#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/re7r/vite-plugin-inline-ts"
+  },
+  "author": "Re7r <re7r@proton.me>",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "eslint --cache .",
+    "lint:fix": "pnpm run lint --fix",
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --cache --write .",
+    "release": "release-it",
+    "prepublishOnly": "pnpm run build"
+  },
+  "peerDependencies": {
+    "@swc/core": "*",
+    "esbuild": "*",
+    "oxc-transform": "*",
+    "typescript": "*",
+    "vite": "^1.0.0||^2.0.0||^3.0.0||^4.0.0||^5.0.0||^6.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@swc/core": {
+      "optional": true
+    },
+    "esbuild": {
+      "optional": true
+    },
+    "oxc-transform": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    },
+    "vite": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "rollup-plugin-inline-ts": "=1.0.2"
+  },
+  "devDependencies": {
+    "@release-it/bumper": "^7.0.5",
+    "@release-it/conventional-changelog": "^10.0.1",
+    "@swc/core": "^1.11.29",
+    "@sxzz/eslint-config": "^7.0.1",
+    "@sxzz/prettier-config": "^2.2.1",
+    "@types/node": "^22.15.21",
+    "esbuild": "^0.25.4",
+    "eslint": "^9.27.0",
+    "eslint-plugin-jsdoc": "^50.6.17",
+    "oxc-transform": "^0.71.0",
+    "prettier": "^3.5.3",
+    "release-it": "^19.0.2",
+    "tsdown": "^0.12.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5",
+    "vitest": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=v18"
+  },
+  "resolutions": {
+    "rollup-plugin-inline-ts": "=1.0.2"
+  }
+}
