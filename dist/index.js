@@ -1,1 +1,1 @@
-import e from"rollup-plugin-inline-ts";function t(t){return{...e({...t??{}})}}export{t as default};
+import e from"rollup-plugin-inline-ts";function t(t){return e(t)}export{t as default};

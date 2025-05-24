@@ -4,9 +4,5 @@ import InlineTsRollupPlugin, { type RollupInlineTsOptions } from 'rollup-plugin-
 export type ViteInlineTsOptions = RollupInlineTsOptions;
 
 export default function InlineTs(options?: ViteInlineTsOptions): Plugin {
-  return {
-    ...InlineTsRollupPlugin({
-      ...(options ?? {}),
-    }),
-  };
+  return InlineTsRollupPlugin(options);
 }
