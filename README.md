@@ -54,7 +54,7 @@ npm install typescript --save-dev
 
 ```js
 // vite.config.js
-import {defineConfig} from 'vite';
+import { defineConfig } from 'vite';
 import inlineTs from 'vite-plugin-inline-ts';
 
 // @see https://vitejs.dev/config/
@@ -64,23 +64,32 @@ export default defineConfig({
     // ...
     inlineTs(),
   ],
-})
+});
 ```
 
 Example with all available options:
 
 ```js
-plugins: [
-  inlineTs({
-    extensions: ['html', 'xht'],                             // Files to process
-    engine: 'swc',                                           // Transpiler engine
-    options: {jsc: {parser: {syntax: 'typescript'}}},        // Engine specific options
-    tsScriptAttr: 'lang="ts"',                               // Match attribute
-    jsScriptAttr: '',                                        // Replacement attribute
-    logPrefix: '[inline-ts]',                                // Log prefix
-    debug: false,                                            // Debug logging
-  }),
-],
+// vite.config.js
+import { defineConfig } from 'vite';
+import inlineTs from 'vite-plugin-inline-ts';
+
+// @see https://vitejs.dev/config/
+export default defineConfig({
+  // ...
+  plugins: [
+    // ...
+    inlineTs({
+      extensions: ['html', 'xht'], // Files to process
+      engine: 'swc', // Transpiler engine
+      options: { jsc: { parser: { syntax: 'typescript' } } }, // Engine specific options
+      tsScriptAttr: 'lang="ts"', // Match attribute
+      jsScriptAttr: '', // Replacement attribute
+      logPrefix: '[inline-ts]', // Log prefix
+      debug: false, // Debug logging
+    }),
+  ],
+});
 ```
 
 ## Options
@@ -105,12 +114,12 @@ Type: `object` (depends on specified `engine`)
 Default: engine-specific  
 Passed directly to the underlying transpiler.
 
-| Engine       | Type                                                                          | Package                                                        | Default                                                                                 |
-|--------------|-------------------------------------------------------------------------------|----------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| `oxc`        | [`TransformOptions`](https://oxc.rs/docs/guide/usage/transformer)             | [`oxc-transform`](https://www.npmjs.com/package/oxc-transform) | <span style="white-space:nowrap">`{}`</span>                                            |
-| `swc`        | [`Config`](https://swc.rs/docs/usage/core#transform)                          | [`@swc/core`](https://www.npmjs.com/package/@swc/core)         | <span style="white-space:nowrap">`{ jsc: { parser: { syntax: 'typescript' } } }`</span> |
-| `esbuild`    | [`TransformOptions`](https://esbuild.github.io/api/#transform)                | [`esbuild`](https://www.npmjs.com/package/esbuild)             | <span style="white-space:nowrap">`{ loader: 'ts' }`</span>                              |
-| `typescript` | [`CompilerOptions`](https://www.typescriptlang.org/tsconfig/#compilerOptions) | [`typescript`](https://www.npmjs.com/package/typescript)       | <span style="white-space:nowrap">`{ target: ts.ScriptTarget.ESNext }`</span>            |
+| Engine       | Type                                                                          | Package                                                        | Default                                         |
+| ------------ | ----------------------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------- |
+| `oxc`        | [`TransformOptions`](https://oxc.rs/docs/guide/usage/transformer)             | [`oxc-transform`](https://www.npmjs.com/package/oxc-transform) | `{}`                                            |
+| `swc`        | [`Config`](https://swc.rs/docs/usage/core#transform)                          | [`@swc/core`](https://www.npmjs.com/package/@swc/core)         | `{ jsc: { parser: { syntax: 'typescript' } } }` |
+| `esbuild`    | [`TransformOptions`](https://esbuild.github.io/api/#transform)                | [`esbuild`](https://www.npmjs.com/package/esbuild)             | `{ loader: 'ts' }`                              |
+| `typescript` | [`CompilerOptions`](https://www.typescriptlang.org/tsconfig/#compilerOptions) | [`typescript`](https://www.npmjs.com/package/typescript)       | `{ target: ts.ScriptTarget.ESNext }`            |
 
 ### `tsScriptAttr`
 
@@ -137,7 +146,7 @@ These imports will not be removed as unused during the transformation.
 ### `logPrefix`
 
 Type: `string`  
-Default: `'[vite-plugin-inline-ts]'`
+Default: `'[inline-ts]'`
 
 Prefix for plugin logs.
 
