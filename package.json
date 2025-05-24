@@ -70,7 +70,7 @@
     }
   },
   "dependencies": {
-    "rollup-plugin-inline-ts": "=1.0.2"
+    "rollup-plugin-inline-ts": "^1.0.4"
   },
   "devDependencies": {
     "@release-it/bumper": "^7.0.5",
@@ -82,10 +82,10 @@
     "esbuild": "^0.25.4",
     "eslint": "^9.27.0",
     "eslint-plugin-jsdoc": "^50.6.17",
-    "oxc-transform": "^0.71.0",
+    "oxc-transform": "^0.72.0",
     "prettier": "^3.5.3",
     "release-it": "^19.0.2",
-    "tsdown": "^0.12.2",
+    "tsdown": "^0.12.3",
     "typescript": "^5.8.3",
     "vite": "^6.3.5",
     "vitest": "^3.1.4"
@@ -94,6 +94,6 @@
     "node": ">=v18"
   },
   "resolutions": {
-    "rollup-plugin-inline-ts": "=1.0.2"
+    "rollup-plugin-inline-ts": "=1.0.4"
   }
 }
