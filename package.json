@@ -70,7 +70,7 @@
     }
   },
   "dependencies": {
-    "rollup-plugin-inline-ts": "^1.0.4"
+    "rollup-plugin-inline-ts": "^1.0.5"
   },
   "devDependencies": {
     "@release-it/bumper": "^7.0.5",
@@ -94,6 +94,6 @@
     "node": ">=v18"
   },
   "resolutions": {
-    "rollup-plugin-inline-ts": "=1.0.4"
+    "rollup-plugin-inline-ts": "=1.0.5"
   }
 }
