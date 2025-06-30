@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-inline-ts",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "packageManager": "pnpm@10.11.0",
   "description": "A Vite plugin to process TypeScript code inside <script lang=\"ts\"> tags.",
   "type": "module",
